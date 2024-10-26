@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>KiDrawing App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="height: 50px;">
+    
+    <ion-label>Choose Color:</ion-label>
+    <input type="color" (input)="changeColor($event)" />
+
+    <ion-label style="margin-left: 10px;">Line Width:</ion-label>
+    <input type="range" min="1" max="10" value="5" (input)="changeLineWidth($event)" />
+  </div>
+  <div class="drawing-container">
+    <div class="drawing-area">
+      <canvas #canvas></canvas>
+      <ion-button expand="full" (click)="clearCanvas()">Clear</ion-button>
+      <!-- <ion-button expand="full" (click)="saveCanvas()">Save</ion-button> -->
+    </div>
+
+    <div class="alphabet-area">
+      <img [src]="currentImage" alt="Alphabet Image" class="alphabet-image" />
+      <ion-button expand="full" (click)="nextImage()">Next Letter</ion-button>
+    </div>
+  </div>
+</ion-content>

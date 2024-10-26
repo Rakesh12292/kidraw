@@ -1,0 +1,7 @@
+{
+  "name": "kidraw",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Enrollment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="enrollmentForm">
+    <ion-item>
+      <ion-label position="floating">ID</ion-label>
+      <ion-input formControlName="id" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Age</ion-label>
+      <ion-input formControlName="age" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Position</ion-label>
+      <ion-input formControlName="position"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Department</ion-label>
+      <ion-input formControlName="department"></ion-input>
+    </ion-item>
+  </form>
+
+  <ion-button expand="block" (click)="openAddEmployeeModal()">
+    Add Employee
+  </ion-button>
+</ion-content>

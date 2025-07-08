@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Select Employee</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let emp of employeeData">
+    <ion-card-header>
+      <ion-card-title>{{ emp.name }}</ion-card-title> 
+      <ion-card-subtitle>ID: {{ emp.id }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Age: {{ emp.age }}</p>
+      <p>Position: {{ emp.position }}</p>
+      <p>Department: {{ emp.department }}</p>
+    </ion-card-content>
+
+    <ion-button
+      expand="block"
+      fill="outline"
+      color="primary"
+      [disabled]="selectedEmployee?.id === emp.id"
+      (click)="selectEmployee(emp)"
+    >
+      {{ selectedEmployee?.id === emp.id ? 'Selected' : 'Select' }}
+    </ion-button>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button
+      expand="block"
+      color="success"
+      [disabled]="!selectedEmployee"
+      (click)="goToEnroll()"
+    >
+      Go to Enroll
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
